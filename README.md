@@ -114,7 +114,7 @@ MAchine Learning: python.
 
 
 <p align="center">
-<img src="ciclo.jpg"  height=300>
+<img src="WORK FLOW.jpg"  height=300>
 </p>
 
 
