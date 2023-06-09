@@ -118,5 +118,18 @@ MAchine Learning: python.
 </p>
 
 
+## **ARCHIVOS DENTRO DEL REPOSITORIO** 
+**EDA.ipynb:**	
+Contiene el análisis exploratorio de datos de los indicadores que se tomaron en cuenta despues de realizar el ETL a la base de dats global del banco mundial
+
+**ETL.ipynb:**	
+Contiene el proceso de extracción, transformación y carga de datos desde la fuente de datos del banco mundial
+
+**indicadores_latinoamerica.csv:**
+Contiene e resultado de hacer el ETL a la fuente de datos del banco mundial
+	
+
+
+
 
 
