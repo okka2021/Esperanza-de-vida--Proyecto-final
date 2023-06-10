@@ -92,9 +92,6 @@ Analista de datos encargado de recopilar, filtrar e interpretar las
 bases de datos para ayudar a la organización en la toma de  
 decisiones.
 
-Edward Galindo	Ingeniero de datos arquitecto de la base de datos, desarrollador 
-de los ETLs, Implementador de pipelines, tester, etc.
-
 **Martin Nardelli:**	
 Data Science encargado de la visualización para que todos 
 puedan utilizar los datos y entenderlos de forma clara, un 
