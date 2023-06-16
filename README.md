@@ -188,12 +188,19 @@ Contiene el resultado de los datos obtenidos despues de compilar el ETL de el ar
 Dashboar interactivo de la esperanza de vda en power bi
 
 **Imagenes utilizadas:**
+
 199714-esperanza-vida-maxima.webp
+
 HD-wallpaper-question-answer-puzzle-words.jpg
+
 iStock-514554772.jpg
+
 kisspng-world-health-organization-public-health-internatio-5b3a6041cecb28.001877091530552385847.jpg
+
 logodatalife.png
+
 png-transparent-world-health-organization-unicef-united-nations-health-logo-world-medical-care.png
+
 pipeline.jpg
 
 **README.md:**
