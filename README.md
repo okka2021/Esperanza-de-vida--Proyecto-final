@@ -187,6 +187,11 @@ Contiene el resultado de los datos obtenidos despues de compilar el ETL de el ar
 
 Dashboar interactivo de la esperanza de vda en power bi
 
+
+**script_etl_cloud 1.mp4:**
+
+Video explicativo del scrip de descarga, la descarga y carga de ETL y el manaejo de google cloud 
+
 **Imagenes utilizadas:**
 
 199714-esperanza-vida-maxima.webp
