@@ -50,19 +50,13 @@ algoritmos
 
 2. GitHub: se utilizará para mantener un historial de cambios, trabajar en colaboración, compartir código y los recursos del proyecto.
 
-3. SQL: Se utilizará para extraer datos de bases de datos, realizar consultas y manipulaciones de datos adicionales. 
-Motor: mysql, postgresql, aurora, etc etc
+3. Power BI:  Lo usaremos para crear visualizaciones interactivas basadas en los resultados de nuestro análisis y compartir los informes con el equipo de la OMS. Esto facilitará la comprensión y comunicación efectiva de los hallazgos.
 
-4. Power BI:  Lo usaremos para crear visualizaciones interactivas basadas en los resultados de nuestro análisis y compartir los informes con el equipo de la OMS. Esto facilitará la comprensión y comunicación efectiva de los hallazgos.
+4. Google cloud: Nos ofrece escalabilidad, rendimiento y almacenamiento seguro para la ingesta, tratamiento y carga de datos a Power BI. Proporciona integración con Power BI, herramientas de procesamiento de datos avanzadas, seguridad y cumplimiento normativo, monitoreo, administración, y flexibilidad en las opciones de implementación. 
 
-5. Streamlit: Lo usaremos para desarrollar una aplicación web interactiva que nos permita compartir entre nuestro equipo visualizaciones y resultados de nuestro análisis de manera fácil y amigable.
+5. Google Cloud Storage: Permite almacenar grandes volúmenes de datos de forma escalable y segura. Los datos pueden ser consultados y accedidos de manera eficiente utilizando las APIs y herramientas proporcionadas por Google Cloud.
 
-6. Azure: es una solución muy rápida y sencilla de utilizar para crear entornos de trabajo en la nube. Su alta velocidad de despliegue permite tener listas aplicaciones y otros servicios cloud en muy poco tiempo y sin la necesidad de realizar un gran esfuerzo.
-
-Azure Data Factory: Es un servicio de orquestación de datos basado en la nube que permite la ingesta, transformación y carga de datos en varios almacenes de datos y servicios en la nube o en las instalaciones. Proporciona herramientas visuales para crear y programar flujos de trabajo de extracción, transformación y carga (ETL) para mover y transformar datos de diferentes fuentes.
-
-Azure Blob Storage: Es un servicio de almacenamiento en la nube escalable y económico que permite la ingesta y el almacenamiento de grandes volúmenes de datos no estructurados, como archivos de registro, imágenes, videos, etc. Puede utilizarse como destino para la ingesta inicial de datos antes de realizar transformaciones o análisis adicionales.
-Azure Data Lake Storage: Es un repositorio de almacenamiento en la nube altamente escalable y seguro para grandes volúmenes de datos estructurados y no estructurados. Permite la ingesta masiva de datos y es compatible con múltiples formatos de datos, lo que facilita el procesamiento y análisis posterior.
+6. Google BigQuery: Permite realizar consultas y análisis en grandes conjuntos de datos utilizando capacidades de procesamiento distribuido. Esto facilita el procesamiento rápido de grandes volúmenes de datos y la obtención de resultados en tiempo real.
 
 ## **Metodología de trabajo:** 
  Utilizaremos Scrum como metodología ágil para la organización y gestión del proyecto ya que posee las siguientes cualidades:
@@ -104,27 +98,117 @@ de los ETLs, Implementador de pipelines, tester, etc
 
 ## **Ciclo de vida del dato:** 
 INGESTA- Dataset, API, IOT, etc (Data Lake)
-TRANSFORMACIÓN: Normalización(gobernanza), Nulos, Duplicados, Outliers, etc ETL. (Data Factory)
-DISPONIBILIZACIÓN: (Data Warehouse) SQL.
+TRANSFORMACIÓN: Normalización(gobernanza), Nulos, Duplicados, Outliers, etc ETL. (Google Cloud)
+DISPONIBILIZACIÓN: (Data Warehouse) 
 VISUALIZACIón: PwBI
 MAchine Learning: python.
 
 
 <p align="center">
-<img src="WORK FLOW.jpg"  height=300>
+<img src="pipeline.jpg"  height=300>
 </p>
 
 
-## **ARCHIVOS DENTRO DEL REPOSITORIO** 
+## **ARCHIVOS DENTRO DEL REPOSITORIO (Documentación)** 
+
+
 **EDA.ipynb:**	
-Contiene el análisis exploratorio de datos de los indicadores que se tomaron en cuenta despues de realizar el ETL a la base de dats global del banco mundial
+
+El código importa las siguientes bibliotecas necesarias: pandas, matplotlib.pyplot, seaborn, missingno, numpy, geopy.geocoders.Nominatim y folium. Estas bibliotecas se utilizan para el manejo de datos, visualizaciones gráficas, visualización de datos faltantes, operaciones numéricas y creación de mapas interactivos.
+
+A continuación, se cargan los datos del archivo CSV 'WDIData.csv' en un DataFrame llamado 'data'.
+
+Se filtran los datos para incluir solo los indicadores específicos y los países de América Latina y el Caribe.
+
+Se utiliza la biblioteca geopy para geocodificar los países de América Latina y el Caribe y obtener su información geográfica, como latitud y longitud.
+
+Se crea un mapa interactivo utilizando la biblioteca folium y se marcan los países en el mapa utilizando los datos geográficos obtenidos.
+
+Luego se eliminan columnas y filas que contienen datos faltantes en el DataFrame.
+
+Se visualiza la matriz de datos faltantes utilizando la biblioteca missingno.
+
+Se crean gráficos y visualizaciones utilizando matplotlib y seaborn para explorar y analizar los datos.
+
+En resumen, el código carga datos, filtra y manipula los datos, realiza geocodificación de países y crea visualizaciones para analizar los indicadores seleccionados en los países de América Latina y el Caribe.
+
+**script_final .py:**	
+
+El código importa las bibliotecas necesarias para realizar diversas tareas en Python, como el manejo de datos, descarga de datos, geocodificación y almacenamiento en Google Cloud Storage.
+
+Se definen los indicadores que se utilizarán en el análisis, así como una lista de países de América Latina y el Caribe.
+
+A continuación, se descargan los datos del Banco Mundial utilizando la función wbdata.get_dataframe(). Los datos se almacenan en un DataFrame y se realiza una manipulación de los mismos, incluyendo la conversión de fechas y la filtración de los últimos 30 años de datos.
+
+Después de la manipulación de datos, se realiza un cambio de nombres en la columna "country" para algunos países específicos.
+
+Finalmente, se utiliza la biblioteca google.cloud.storage para cargar los DataFrames resultantes en archivos CSV en Google Cloud Storage. Se establece la ruta del archivo JSON de credenciales, se crea un cliente de almacenamiento, se obtiene el bucket correspondiente y se cargan los archivos CSV en el bucket.
+
+Este código en Python es útil para descargar, manipular y almacenar datos del Banco Mundial en Google Cloud Storage, facilitando su análisis y acceso posterior.
 
 **ETL.ipynb:**	
-Contiene el proceso de extracción, transformación y carga de datos desde la fuente de datos del banco mundial
+
+El código importa las bibliotecas necesarias, incluyendo pandas y numpy para el manejo de datos, y las clases necesarias de las bibliotecas de Google Cloud para interactuar con Google Cloud Storage. También importa la clase Credentials para autenticar el acceso a Google Cloud.
+
+Luego, se especifica la ruta del archivo de credenciales JSON y se cargan las credenciales utilizando la clase Credentials.
+
+Se crea un cliente de Google Cloud Storage utilizando las credenciales.
+
+A continuación, se descargan dos archivos de Google Cloud Storage especificando el nombre del bucket, el nombre del blob y la ruta local donde se guardarán los archivos descargados.
+
+Los archivos descargados se leen en DataFrames utilizando la función read_csv de pandas.
+
+Se realiza una manipulación de datos, calculando el porcentaje de valores nulos en cada fila del DataFrame y eliminando las filas que tienen un porcentaje de valores nulos mayor o igual al 15%. También se elimina una columna específica del DataFrame.
+
+Después, se guarda un DataFrame en un archivo CSV utilizando la función to_csv de pandas.
+
+Finalmente, se cargan los archivos CSV al Google Cloud Storage utilizando la función upload_from_filename y los nombres de los blobs correspondientes.
+
+En resumen, el código realiza tareas relacionadas con la manipulación y almacenamiento de datos utilizando Google Cloud Storage. Descarga archivos, manipula los datos, guarda los resultados en archivos locales y luego los sube de nuevo a Google Cloud Storage.
+
 
 **indicadores_latinoamerica.csv:**
-Contiene e resultado de hacer el ETL a la fuente de datos del banco mundial
+
+Contiene el resultado de los datos obtenidos despues de compilar el script la fuente de datos del banco mundial 
 	
+**credentials.json:**
+
+las credenciales necesarias para entrar a la cuanta de google cloud 
+
+**df_geograficos.csv:**
+
+contiene el resultado de la latidud y longitud de cada pais  
+
+**indicadores_latinoamerica_final.csv:**
+
+Contiene el resultado de los datos obtenidos despues de compilar el ETL de el archivo obtenido en el script
+
+**esperanza de vidafinal.pbix:**
+
+Dashboar interactivo de la esperanza de vda en power bi
+
+**Imagenes utilizadas:**
+199714-esperanza-vida-maxima.webp
+HD-wallpaper-question-answer-puzzle-words.jpg
+iStock-514554772.jpg
+kisspng-world-health-organization-public-health-internatio-5b3a6041cecb28.001877091530552385847.jpg
+logodatalife.png
+png-transparent-world-health-organization-unicef-united-nations-health-logo-world-medical-care.png
+pipeline.jpg
+
+**README.md:**
+Documentación
+
+
+
+
+
+
+
+
+
+
+
 
 
 
