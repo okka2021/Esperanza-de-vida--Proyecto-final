@@ -21,7 +21,17 @@ Al comprender en profundidad la esperanza de vida en Latinoamérica y el Caribe,
 
 ## **Objetivos:**
 
-El objetivo de este trabajo es analizar cómo la esperanza de vida al nacer se ve afectada por diferentes factores socioeconómicos, tales como el nivel de desarrollo económico, medido por el Producto Interno Bruto (PIB), el grado de pobreza, el acceso a la educación y las oportunidades de empleo. Se pretende identificar las principales variables que influyen en la calidad y la duración de la vida de las personas, así como las posibles políticas públicas que podrían mejorarlas.	
+El objetivo de este trabajo es analizar cómo la esperanza de vida al nacer se ve afectada por diferentes factores tales como el nivel de desarrollo económico, medido por el GNI per capita, la tasa de fertilidad, la mortalidad infantil y las oportunidades de empleo. Se pretende identificar las principales variables que influyen en la calidad y la duración de la vida de las personas, así como las posibles políticas públicas que podrían mejorarlas.	
+
+## **KPIs:**
+
+Reducir la tasa de fertilidad en al menos un 8% en razón de la tasa de fertilidad a nivel regional alcanzada para el 2021 en comparación con el 2016.
+
+Aumentar la esperanza de vida en al menos un 3% en razón de la esperanza de vida a nivel regional alcanzada para el 2021 en comparación con el 2011.
+
+Reducir la tasa de mortalidad infantil en al menos un 10% en razón de la tasa de mortalidad infantil a nivel regional alcanzada para el 2021 en comparación con el 2016.
+
+Aumentar el GNI per capita en al menos un 10% en razón del GNI per capita a nivel regional alcanzado para el 2021 en comparación con el 2016.
 
 ## **Alcance:**
 
@@ -45,6 +55,7 @@ Solución propuesta::
 
 
  ## **Stack tecnológico:**
+
 1. Python: Se utilizará el lenguaje de programación, Python para realizar la verificación y limpieza de los datos obtenidos ,datos como faltantes, nulos, normalización de nombres de columnas y la decisión de eliminar columnas que no sean relevantes para nuestro análisis, después de esto hacer  procesamiento y análisis de los conjuntos de datos, aplicar técnicas estadísticas y desarrollar modelos predictivos o descriptivos. También se aprovechará la amplia gama de bibliotecas de Python, como pandas, NumPy, matplotlib y seaborn, para realizar tareas de manipulación de datos, visualización y análisis estadístico.
 algoritmos
 
@@ -59,8 +70,11 @@ algoritmos
 6. Google BigQuery: Permite realizar consultas y análisis en grandes conjuntos de datos utilizando capacidades de procesamiento distribuido. Esto facilita el procesamiento rápido de grandes volúmenes de datos y la obtención de resultados en tiempo real.
 
 ## **Metodología de trabajo:** 
- Utilizaremos Scrum como metodología ágil para la organización y gestión del proyecto ya que posee las siguientes cualidades:
+
+Utilizaremos Scrum como metodología ágil para la organización y gestión del proyecto ya que posee las siguientes cualidades:
+
 1. Flexibilidad y adaptabilidad: lo cual es especialmente beneficioso en un proyecto de análisis de datos que puede requerir cambios y ajustes en el transcurso del trabajo. 
+
 2. Entregas incrementales: Scrum se basa en la entrega de incrementos de trabajo completados en intervalos de tiempo cortos y regulares, conocidos como "sprints". Esto permite obtener resultados tangibles en etapas tempranas del proyecto y facilita la retroalimentación y la validación temprana por parte del equipo de la OMS. Además, los entregables incrementales aseguran que los resultados se vayan generando de manera continua, lo que es fundamental para un proyecto de análisis de datos.
 
 3. Colaboración y comunicación: Scrum fomenta la colaboración activa entre los miembros del equipo y la comunicación fluida con los stakeholders. En el presente proyecto  es esencial tener interacciones frecuentes entre los expertos en datos, los analistas y el equipo de la OMS para asegurar un entendimiento claro de los requisitos, abordar dudas o problemas y tomar decisiones basadas en los hallazgos.
@@ -72,31 +86,36 @@ algoritmos
 Dicha metodología será desempeñada en un contexto que cuenta con reuniones diarias entre nuestro equipo de trabajo con nuestro organizador, una reunión semanal con un representante de la OMS, y reuniones de consulta, acuerdos y abordaje de problemáticas emergentes a cualquier horario garantizando que sea de lunes a viernes entre nuestro equipo.
    
 ## **Diseño detallado - Entregables:** 
+
    -Realizaremos un Dashboard interactivo con  análisis de los factores socioeconómicos que influyen en la esperanza de vida.
     - También vamos a realizar un informe con recomendaciones claras y evaluables para mejorar la esperanza de vida.
-    -  Predicciones
-
+   
 ## **Equipo de trabajo:** 
+
 <p align="center">
 <img src="logodatalife.png"  height=300>
 </p>
 
 **Esteban Santillan:**
+
 Analista de datos encargado de recopilar, filtrar e interpretar las 
 bases de datos para ayudar a la organización en la toma de  
 decisiones.
 
 **Martin Nardelli:**	
+
 Data Science encargado de la visualización para que todos 
 puedan utilizar los datos y entenderlos de forma clara, un 
 experto en Data Science tiene que ser capaz de representarlos 
 de forma que sean comprensibles.
 
 **Oscar Arias:**		
+
 Ingeniero de datos arquitecto de la base de datos, desarrollador 
 de los ETLs, Implementador de pipelines, tester, etc
 
 ## **Ciclo de vida del dato:** 
+
 INGESTA- Dataset, API, IOT, etc (Data Lake)
 TRANSFORMACIÓN: Normalización(gobernanza), Nulos, Duplicados, Outliers, etc ETL. (Google Cloud)
 DISPONIBILIZACIÓN: (Data Warehouse) 
@@ -166,7 +185,6 @@ Finalmente, se cargan los archivos CSV al Google Cloud Storage utilizando la fun
 
 En resumen, el código realiza tareas relacionadas con la manipulación y almacenamiento de datos utilizando Google Cloud Storage. Descarga archivos, manipula los datos, guarda los resultados en archivos locales y luego los sube de nuevo a Google Cloud Storage.
 
-
 **indicadores_latinoamerica.csv:**
 
 Contiene el resultado de los datos obtenidos despues de compilar el script la fuente de datos del banco mundial 
@@ -186,7 +204,6 @@ Contiene el resultado de los datos obtenidos despues de compilar el ETL de el ar
 **esperanza de vidafinal.pbix:**
 
 Dashboar interactivo de la esperanza de vda en power bi
-
 
 **script_etl_cloud 1.mp4:**
 
@@ -209,6 +226,7 @@ png-transparent-world-health-organization-unicef-united-nations-health-logo-worl
 pipeline.jpg
 
 **README.md:**
+
 Documentación
 
 
