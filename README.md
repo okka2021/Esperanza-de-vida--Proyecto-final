@@ -25,7 +25,7 @@ El objetivo de este trabajo es analizar cómo la esperanza de vida al nacer se v
 
 ## **KPIs:**
 
-Reducir la tasa de fertilidad en al menos un 8% en razón de la tasa de fertilidad a nivel regional alcanzada para el 2021 en comparación con el 2016.
+Reducir la tasa de fertilidad en no más de un 6% en razón de la tasa de fertilidad a nivel regional alcanzada para el 2021 en comparación con el 2016.
 
 Aumentar la esperanza de vida en al menos un 3% en razón de la esperanza de vida a nivel regional alcanzada para el 2021 en comparación con el 2011.
 
